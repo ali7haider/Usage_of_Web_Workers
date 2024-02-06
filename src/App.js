@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { fetchUsers } from './services/fetchUser';
 import './App.css';
-import worker from './app.worker.js';
+import workerFunction from './app.worker.js';
 import WebWorker from './WebWorker';
 
 const App = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [users, setUsers] = useState([]);
     const [isSorting, setIsSorting] = useState(false);
-    const webWorker = new WebWorker(worker);
+
+    const webWorker = useMemo(() => {
+        return new WebWorker(workerFunction);
+    }, []); // Empty dependency array ensures it's only created once
 
     useEffect(() => {
         fetchUsers().then(users => {
@@ -19,31 +22,23 @@ const App = () => {
         return () => {
             webWorker.terminate();
         };
-    }, []);
+    }, [webWorker]); // Include webWorker in the dependency array
 
     const sortAscending = () => {
         webWorker.postMessage({ users, type: "asc" });
         setIsSorting(true);
-
-        webWorker.addEventListener('message', (event) => {
-            const sortedList = event.data;
-
-            setUsers(sortedList);
-            setIsSorting(false);
-        });
     };
-    const sortAscendingWithoutWebWorker = () => {
-        setIsSorting(true);
-    
-        // Sort the users array in ascending order based on commentCount
-        const sortedUsers = [...users].sort((a, b) => a.commentCount - b.commentCount);
-    
-        // Update the state with the sorted users
-        setUsers(sortedUsers);
-    
+
+    webWorker.addEventListener('message', (event) => {
+        const sortedList = event.data;
+        setUsers(sortedList);
         setIsSorting(false);
+    });
+
+    const handleButtonClick = () => {
+        alert("Button clicked!");
     };
-    
+
     const renderUsers = () => {
         return users.map((user, index) => (
             <div key={index} className="card mt-4 mb-4">
@@ -66,36 +61,25 @@ const App = () => {
             </nav>
             <div className="buttonContainer">
                 <div className="row">
-                  <div className="col-md-12">
-                    <div className="btn-group mr-2 mt-2" role="group" aria-label="Basic example">
-                      <button onClick={sortAscendingWithoutWebWorker} type="button" disabled={isLoading} className="btn btn-primary">
-                        Sort Ascending Number of Comments Without WebWorker
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
                     <div className="col-md-12">
                         <div className="btn-group mr-2 mt-2" role="group" aria-label="Basic example">
-                            <button onClick={() => alert("Button clicked!")} type="button" className="btn btn-info">
+                            <button onClick={handleButtonClick} type="button" className="btn btn-info">
                                 Click Me!
                             </button>
                         </div>
                     </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-12">
-                    <div className="btn-group mr-2 mt-2" role="group" aria-label="Basic example">
-                      <button onClick={sortAscending} type="button" disabled={isLoading} className="btn btn-success">
-                        Sort Ascending Number of Comments With WebWorker
-                      </button>
+                    <div className="col-md-12">
+                        <div className="btn-group mr-2 mt-2" role="group" aria-label="Basic example">
+                            <button onClick={sortAscending} type="button" disabled={isLoading} className="btn btn-success">
+                                Sort Ascending Number of Comments With WebWorker
+                            </button>
+                        </div>
                     </div>
-                    
-                  </div>
                 </div>
-              </div>
-              
-                
+            </div>
+
             <div className="container">
 
                 {isSorting && <div className="mt-4">Sorting ...</div>}

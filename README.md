@@ -18,8 +18,12 @@ This project is aimed at demonstrating the concept of Web Workers and the perfor
 Below that, there is 25000 user data in card style row by row.
 The focus is to sort items with web worker and without web worker to measure the performance of the application.
 # How to Run the Project Locally
+- ## Before running the application locally, make sure you have the following installed:
+  - Node.js
+  - npm (Node Package Manager)
 To run the project locally, follow these steps:
 - Clone the repository to your local machine.
+  `git clone https://github.com/ali7haider/Usage_of_Web_Workers`
 - Open the project directory and run `npm start` in the cmd.
 - The app will run on the local host.
 - Click on the buttons to perform the respective actions:
@@ -39,8 +43,7 @@ As in this app, you can observe a clear difference in the performance of the app
   - To Understand web workers, I have used Google, Chatgpt, and other online platforms.
   - I have also used online tutorials.
 # References and Resources
-
-- [Web Workers API by MDN Mozilla]([https://github.com](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [Web Workers API by MDN Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
 - Youtube
 - Chatgpt
 

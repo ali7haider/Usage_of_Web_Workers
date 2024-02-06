@@ -26,3 +26,24 @@ To run the project locally, follow these steps:
   - The "Sort Ascending Number of Comments Without WebWorker" button sorts user data in ascending order based on comments without using a web worker.
   - The "Sort Ascending Number of Comments With WebWorker" button sorts user data in ascending order based on comments using a web worker.
   - The "Click Me!" button displays an alert message to test the performance of the application.
+# Performance Measure
+Using a Web Worker for computationally intensive tasks, such as  sorting large arrays, complex calculations, performing calculations, or filtering results based on user input significantly improves performance. The UI remains responsive during these process when using a Web Worker, whereas, without a Web Worker, the UI may freeze or become unresponsive until the calculation is complete.
+As in this app, you can observe a clear difference in the performance of the app with using Web Worker and without Web Worker. Without a web worker when 25000 users are sorted the UI freezes and the alert button will not work until the sort user while with a web worker UI does not freeze and the alert button will work smoothly without any UI lagging.
+# Challenges Faced and Solutions
+- **Challenges:**
+  - Understanding what is web worker.
+  - How to use Web Worker in the application
+  - Sending and receiving messages between the main thread and the Web Worker.
+  - How to integrate web worker code in the application.
+- **Solutions:**
+  - To Understand web workers, I have used Google, Chatgpt, and other online platforms.
+  - I have also used online tutorials.
+# References and Resources
+
+- [Web Workers API by MDN Mozilla]([https://github.com](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- Youtube
+- Chatgpt
+
+    
+
+

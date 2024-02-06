@@ -28,7 +28,17 @@ const App = () => {
         webWorker.postMessage({ users, type: "asc" });
         setIsSorting(true);
     };
-
+    const sortAscendingWithoutWebWorker = () => {
+        setIsSorting(true);
+    
+        // Sort the users array in ascending order based on commentCount
+        const sortedUsers = [...users].sort((a, b) => a.commentCount - b.commentCount);
+    
+        // Update the state with the sorted users
+        setUsers(sortedUsers);
+    
+        setIsSorting(false);
+    };
     webWorker.addEventListener('message', (event) => {
         const sortedList = event.data;
         setUsers(sortedList);
@@ -60,6 +70,15 @@ const App = () => {
 
             </nav>
             <div className="buttonContainer">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="btn-group mr-2 mt-2" role="group" aria-label="Basic example">
+                            <button onClick={sortAscendingWithoutWebWorker} type="button" disabled={isLoading} className="btn btn-primary">
+                                Sort Ascending Number of Comments Without WebWorker
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div className="row">
                     <div className="col-md-12">
                         <div className="btn-group mr-2 mt-2" role="group" aria-label="Basic example">

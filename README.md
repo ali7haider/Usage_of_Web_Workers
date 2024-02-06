@@ -23,6 +23,6 @@ To run the project locally, follow these steps:
 - Open the project directory and run `npm start` in the cmd.
 - The app will run on the local host.
 - Click on the buttons to perform the respective actions:
-- - The "Sort Ascending Number of Comments Without WebWorker" button sorts user data in ascending order based on comments without using a web worker.
-- - The "Sort Ascending Number of Comments With WebWorker" button sorts user data in ascending order based on comments using a web worker.
-- - The "Click Me!" button displays an alert message to test the performance of the application.
+  - The "Sort Ascending Number of Comments Without WebWorker" button sorts user data in ascending order based on comments without using a web worker.
+  - The "Sort Ascending Number of Comments With WebWorker" button sorts user data in ascending order based on comments using a web worker.
+  - The "Click Me!" button displays an alert message to test the performance of the application.

@@ -1,0 +1,138 @@
+/* App.css */
+
+/* Navbar */
+.navbar {
+  background-color: #343a40; /* Dark background color */
+  color: white; /* Text color */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+
+  margin-bottom: 30px;
+
+}
+.mainHeading{
+  font-size: 30px;
+  font-weight: 700;
+  padding-left: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.mainHeading2{
+  font-size: 20px;
+  
+
+}
+.rollNum{
+  margin-right: 20px;
+  font-size: 15px;
+  font-weight: 500;
+
+
+  
+}
+/* Target buttons inside .btn-group */
+.btn-group button {
+  /* Common styles */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary button style */
+.btn-group button.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Success button style */
+.btn-group button.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Secondary button style */
+.btn-group button.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+.btn-info{
+  background-color: #6c736d;
+  color: #fff;
+
+
+}
+
+/* Additional styles */
+.btn-group button:hover {
+  opacity: 0.8;
+}
+.buttonContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px; /* Adjust the margin-bottom value as needed */
+
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+/* Card */
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Card header */
+.card-header {
+  background-color: #f8f9fa;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Card body */
+.card-body {
+  padding: 1.25rem;
+}
+
+/* Card title */
+.card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/* Card text */
+.card-text {
+  margin-bottom: 0;
+}
+
+/* Card footer */
+.card-footer {
+  background-color: #f8f9fa;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  color: #6c757d;
+}
+
+/* Change background color on hover */
+.card:hover {
+  background-color: #e9ecef; /* New background color on hover */
+  cursor: pointer;
+}
+
+
+.container{
+  margin-left: 100px;
+  margin-right: 100px;
+
+}

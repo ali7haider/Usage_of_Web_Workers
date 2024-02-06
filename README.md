@@ -46,6 +46,9 @@ As in this app, you can observe a clear difference in the performance of the app
 - [Web Workers API by MDN Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
 - Youtube
 - Chatgpt
+# Live Website link
+  https://inquisitive-platypus-483f2c.netlify.app/
+
 
     
 
